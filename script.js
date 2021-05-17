@@ -18,3 +18,40 @@ appData.expenses.question3 = question4;
 alert("Бюджет на 1 день : "+appData.budget/30);
 console.log(appData)
 */
+
+// Lesson 2.8 ///
+/*let num = 50;
+
+switch (num){
+    case num > 50:
+        break;
+    case num <50:
+        break;
+    case 50:
+        console.log("YEAH");
+        break;
+        default:
+            console.log("NISHMAGLA");
+        break;
+}*/
+
+//LESSON 2.9 ЦИКЛЫ
+let num = 50;
+while(num <55)
+{
+    console.log(num);
+    num++;
+}
+
+do{
+    console.log(num);
+    num++;
+}
+while(num <60);
+
+for(let i =0; i<10; i++){
+    if (i ==6)continue;
+    if(i ==8)break;
+    console.log(i);
+
+}
