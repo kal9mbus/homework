@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 //let money = 20000, time = 2021-05-15, question1 = "JKX", question2 = 1500, question3 = "SVET", question4 = 2500;
 /*let money = prompt("Ваш бюджет на месяц?", ""), time = prompt("Введите дату в формате YYYY-MM-DD","");
@@ -36,7 +36,7 @@ switch (num){
 }*/
 
 //LESSON 2.9 ЦИКЛЫ
-let num = 50;
+/*let num = 50;
 while(num <55)
 {
     console.log(num);
@@ -54,4 +54,6 @@ for(let i =0; i<10; i++){
     if(i ==8)break;
     console.log(i);
 
-}
+}*/
+
+//Lesson 2.10 Практика. Пишем приложение часть 1
