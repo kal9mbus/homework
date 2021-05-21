@@ -16,10 +16,10 @@ let a, b, i = 0;
 
 for (i = 0; i < 2; i++)
 {
-    a = prompt("Введите обязательную статью расходов в этом месяце",""), b = prompt("Во сколько обойдётся?","");
+    a = prompt("Введите обязательную статью расходов в этом месяце",""), b = +prompt("Во сколько обойдётся?","");
 
-    if((typeof(a) === 'string') && typeof(a)!= null && (typeof(b) === 'string') && typeof(b)!= null && a != '' && b != '' && a.length <40 && b.length < 50){
-		console.log("yeah");
+    if((typeof(a) === 'string') && typeof(a)!= null &&  typeof(b)!= null && a != '' && b != '' && a.length < 40 && !isNaN(b)){
+		console.log("yeah" + a + ', ' + b);
 		appData.expenses[a] = b;
 	}
 	else {
