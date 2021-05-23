@@ -10,7 +10,7 @@ function start() {
 	}
 	console.log(money);
 }
-start();
+//start();
 
 
 let appData = {
@@ -38,26 +38,45 @@ function chooseExpenses() {
 
 	}
 }
-chooseExpenses();
+//chooseExpenses();
 
-appData.moneyPerDay = (appData.budget / 30).toFixed();
-alert("Ежедневный бюджет : " + appData.moneyPerDay);
-
-if (appData.moneyPerDay < 100) {
-	console.log("минимальный уровень достатка");
-} else if (appData.moneyPerDay >= 100 && appData.moneyPerDay < 2000) {
-	console.log("Средний уровень достатка");
-} else if (appData.moneyPerDay >= 2000) {
-	console.log("Высокий уровень достатка");
-} else {
-	console.log("Произошла ошибка");
+function detectDayBudget() {
+	appData.moneyPerDay = (appData.budget / 30).toFixed();
+	alert("Ежедневный бюджет : " + appData.moneyPerDay);
 }
+//detectDayBudget();
 
-function checkSavings(){
-	if (appData.savings == true){
-		let save = +prompt("Какова сумма накоплений?",''), percent = +prompt("Под какой процент?",'');
-		appData.monthIncome = save/100/12*percent;
-		alert("Доход в месяц с вашего депозита : "+ appData.monthIncome);
+function detectLevel() {
+	if (appData.moneyPerDay < 100) {
+		console.log("минимальный уровень достатка");
+	} else if (appData.moneyPerDay >= 100 && appData.moneyPerDay < 2000) {
+		console.log("Средний уровень достатка");
+	} else if (appData.moneyPerDay >= 2000) {
+		console.log("Высокий уровень достатка");
+	} else {
+		console.log("Произошла ошибка");
 	}
 }
-checkSavings();
+//detectLevel();
+
+function checkSavings() {
+	if (appData.savings == true) {
+		let save = +prompt("Какова сумма накоплений?", ''),
+			percent = +prompt("Под какой процент?", '');
+		appData.monthIncome = save / 100 / 12 * percent;
+		alert("Доход в месяц с вашего депозита : " + appData.monthIncome);
+	}
+}
+//checkSavings();
+
+function chooseOptExpenses() {
+	let a;
+	for (let i = 1; i <= 3; i++) {
+		 a = '';
+		while(a == '' || typeof(a) !== 'string' || a.length > 50){
+			a = prompt("Статья необязательных расходов?",""); 
+		}
+		appData.optionalExpenses[i] = a;
+	}
+}
+chooseOptExpenses();
