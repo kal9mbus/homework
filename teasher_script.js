@@ -60,9 +60,8 @@ let appData = {
 		}
 	},
 	chooseOptExpenses: function(){
-		let a;
 		for (let i = 1; i <= 3; i++) {
-			 a = '';
+			let a = '';
 			while(a == '' || typeof(a) !== 'string' || a.length > 50){
 				a = prompt("Статья необязательных расходов?",""); 
 			}
@@ -71,9 +70,10 @@ let appData = {
 	},
 	chooseIncome: function(){
 		let items = prompt("Что принесет дополнительный доход? (перечислите через запятую)","");
-		if(typeof(items) === 'string' && items !='' && items !=null){
-		appData.income = items.split(', ');
+		while(items == '' || items == null){
+			items = prompt("Что принесет дополнительный доход? (перечислите через запятую)","");
 		}
+		appData.income = items.split(', ');
 		appData.income.push(prompt("Может что то еще?",""));
 		appData.income.sort();
 	}
