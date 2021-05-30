@@ -76,6 +76,9 @@ let appData = {
 		appData.income = items.split(', ');
 		appData.income.push(prompt("Может что то еще?",""));
 		appData.income.sort();
+		array.forEach(function(){
+			
+		});
 	}
 };
 
@@ -135,7 +138,7 @@ let soldier = {
 let John = {
 	health: 100
 };
-John.__proto__ = soldier;
+John._proto_ = soldier;
 
 console.log(John);
 console.log(John.armor);*/
